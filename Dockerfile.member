@@ -1,12 +1,6 @@
 FROM phusion/baseimage
 MAINTAINER Michał Piotrowski <michal.piotrowski@erlang-solutions.com>
 
-# required packages
-RUN apt-get update && apt-get install -y \
-    bash \
-    vim &&\
-    apt-get clean
-
 COPY ./member/clusterize /clusterize
 COPY ./member/start.sh /start.sh
 COPY ./member/mongooseim.tar.gz mongooseim.tar.gz
